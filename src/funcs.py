@@ -15,7 +15,7 @@ def get_cats(url):
     cat_url = []
     cat_names = []
     response = requests.get(url)
-    soup = BeautifulSoup(response.content)
+    soup = BeautifulSoup(response.content, "html.parser")
     cats = soup.find_all('div', class_ = "card h-100")
     for cat in cats:
         anchor = cat.find('a')
@@ -28,7 +28,7 @@ def get_cats(url):
 def get_hist(url):
     hist_list = []
     response = requests.get(url)
-    soup = BeautifulSoup(response.content)
+    soup = BeautifulSoup(response.content, "html.parser")
     hists = soup.findAll('div', class_ = "card h-100")
     for hist in hists:
         anchor = hist.find('a')
@@ -38,7 +38,7 @@ def get_hist(url):
 
 def get_tab(url):
     response = requests.get(url)
-    soup = BeautifulSoup(response.content)
+    soup = BeautifulSoup(response.content, "html.parser")
     tab = soup.find('table', class_="table table-striped table-responsive text-center")
     lista_elementos = [td.findAll('td') for td in tab.findAll('tr')][1:]
     df_tab = pd.DataFrame(lista_elementos).map(lambda x: x.text)
