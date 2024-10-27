@@ -1,5 +1,6 @@
 import pandas as pd
 
+import re
 from bs4 import BeautifulSoup
 import requests
 
@@ -46,3 +47,33 @@ def get_tab(url):
     df_tab.rename(columns= dict(enumerate(headers)), inplace=True)
     df_tab["Nombre"] = soup.find('meta', {"name": 'Keywords'}).get('content').replace('precio ', '')
     return df_tab
+
+
+import re
+
+def extraer_cantidad(nombre_producto):
+    nombre_producto = nombre_producto.lower()
+    patron = r'(\d+[.,]?\d*)\s?(l|ml|g|kg|litros|litro|cl|gramos|mililitros)(?![a-zA-Z])'
+    
+    coincidencias = re.findall(patron, nombre_producto)
+    
+    if coincidencias:
+        cantidad_str, unidad = coincidencias[-1]
+        cantidad = float(cantidad_str.replace(",", "."))
+        
+        # Convertir unidades
+        if unidad in ["ml", "mililitros"]:
+            cantidad /= 1000
+            unidad = "l"
+        elif unidad == "cl":
+            cantidad /= 100
+            unidad = "l"
+        elif unidad == "kg":
+            cantidad *= 1000
+            unidad = "g"
+        elif unidad in ["litros", "litro"]:
+            unidad = "l"
+        
+        return [cantidad, unidad]
+
+    return [None, None]

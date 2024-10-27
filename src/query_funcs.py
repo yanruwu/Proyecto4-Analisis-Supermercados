@@ -1,12 +1,21 @@
 import psycopg2
 from psycopg2 import errorcodes, OperationalError
 
-def conectar():
+import os
+import sys
+import dotenv
+sys.path.append("..")
+dotenv.load_dotenv()
+
+pw1 = os.getenv("pw1")
+
+
+def conectar(pw = pw1):
     try:
         connection = psycopg2.connect(
             database = "Analisis-Supermercados",
             user = "postgres",
-            password = "admin",
+            password = pw,
             host = "localhost",
             port = "5432"
         )
