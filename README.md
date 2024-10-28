@@ -32,3 +32,46 @@ Este proyecto busca analizar la variabilidad y evolución de precios de producto
 └── README.md               # Documentación del proyecto
 ```
 
+## Instalación y Requisitos
+
+Para configurar el entorno de desarrollo y asegurarte de que todas las dependencias necesarias estén instaladas, sigue estos pasos:
+
+### Requisitos
+
+- Python 3.7 o superior 🐍
+- [Anaconda](https://www.anaconda.com/products/distribution) o [Miniconda](https://docs.conda.io/en/latest/miniconda.html) (opcional, pero recomendado)
+
+### Paquetes Necesarios
+
+El proyecto utiliza los siguientes paquetes:
+
+- [`pandas`](https://pandas.pydata.org/pandas-docs/stable/): Para la manipulación y análisis de datos.
+- [`numpy`](https://numpy.org/doc/stable/): Para operaciones numéricas y manejo de arrays.
+- [`matplotlib`](https://matplotlib.org/stable/users/index.html): Para la visualización de datos.
+- [`seaborn`](https://seaborn.pydata.org/): Para visualización estadística de datos.
+- [`plotly`](https://plotly.com/python/): Para gráficos interactivos.
+- [`tqdm`](https://tqdm.github.io/): Para mostrar barras de progreso en loops.
+- [`psycopg2`](https://www.psycopg.org/): Para conectar Python con PostgreSQL.
+- [`BeautifulSoup`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): Para el scraping de datos.
+- [`requests`](https://docs.python-requests.org/en/latest/): Para realizar solicitudes HTTP sencillas.
+
+### Instalación
+
+1. **Clona el repositorio:**
+
+   ```bash
+   git clone https://github.com/yanruwu/Proyecto4-Analisis-Supermercados
+   cd Proyecto4-Analisis-Supermercados
+2. **Crea un entorno virtual:**
+
+    Para crear el entorno de Conda, usa el siguiente comando:
+    ```bash
+    conda env create -f environment.yml
+    ```
+    O si prefieres usar venv:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # En macOS/Linux
+    venv\Scripts\activate     # En Windows
+    ```
+    
