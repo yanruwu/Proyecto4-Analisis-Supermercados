@@ -108,8 +108,10 @@ El análisis de precios de productos en diferentes supermercados proporciona ins
 
 4. **Tendencias en la Evolución de Precios**:
    - El análisis temporal reveló que los precios del aceite de oliva experimentaron una notable reducción tras la exención del IVA a finales de junio. Sin embargo, se detectaron prácticas engañosas, donde los precios se incrementaron momentáneamente para después ser marcados como rebajados.
+   
    ![Gráfica de Evolución de Precios por Producto](img/variacion.png)
    - Este comportamiento sugiere que los consumidores deben ser críticos al evaluar ofertas de precios, ya que pueden estar sujetas a manipulaciones de corto plazo.
+
 
    ![Gráfica de Evolución de Precios](img/anomalies.png)
 
